@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mediatalk_app
+    ports:
+      - "8181:8000"
+      - "5173:5173"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=mediatalk
+      - DB_USERNAME=mediatalk
+      - DB_PASSWORD=secret
+
+  db:
+    image: mysql:8.0
+    container_name: mediatalk_db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=mediatalk
+      - MYSQL_USER=mediatalk
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=secret_root
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

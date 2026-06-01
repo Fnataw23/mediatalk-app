@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .font-display {
+        font-family: 'Space Grotesk', 'Inter', sans-serif;
+        letter-spacing: -0.03em;
+    }
+    
+    .font-body {
+        font-family: 'Inter', 'Arial', sans-serif;
+        letter-spacing: -0.01em;
+    }
+
+    /* Global Dark Theme Overrides */
+    body {
+        background-color: #0b0b0e !important;
+        color: #ffffff !important;
+    }
+
+    /* Target all light layout elements and map to high-end Cohere dark backgrounds */
+    .bg-white, 
+    div.bg-white, 
+    nav.bg-white, 
+    header.bg-white {
+        background-color: #0b0b0e !important;
+    }
+
+    /* Cards should be slightly lighter, elevated dark panels */
+    .bg-white.border,
+    .bg-cohere-stone,
+    div.bg-cohere-stone {
+        background-color: #121217 !important;
+    }
+
+
+    /* Muted colors & dividers */
+    .border-cohere-hairline,
+    .border-cohere-card-border,
+    .border-gray-100,
+    .border-gray-200,
+    .border-gray-300,
+    hr {
+        border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    /* Text overrides */
+    .text-cohere-primary,
+    .text-gray-900,
+    .text-gray-800 {
+        color: #ffffff !important;
+    }
+
+    .text-cohere-body-muted,
+    .text-cohere-muted,
+    .text-cohere-slate,
+    .text-gray-500,
+    .text-gray-600 {
+        color: #a0a0ab !important;
+    }
+
+    /* Interactive accents (Electric Turquoise / Cyan) */
+    .text-cohere-blue,
+    .text-indigo-600,
+    .text-blue-600 {
+        color: #00f5d4 !important;
+    }
+
+    .hover\:text-cohere-blue:hover,
+    .hover\:text-indigo-600:hover,
+    .hover\:text-blue-600:hover {
+        color: #00e5c9 !important;
+    }
+
+    /* Active navigation borders */
+    .border-b-2.border-cohere-primary,
+    .border-indigo-500 {
+        border-color: #00f5d4 !important;
+    }
+
+    /* Outlined buttons and chips */
+    .border-cohere-hairline.text-cohere-primary:hover,
+    .border-cohere-hairline.hover\:border-cohere-primary:hover {
+        border-color: #00f5d4 !important;
+        color: #00f5d4 !important;
+    }
+
+    /* Pill / Primary Button */
+    .bg-cohere-primary,
+    .bg-indigo-600 {
+        background-color: #00f5d4 !important;
+        color: #08080a !important;
+        font-weight: 600 !important;
+    }
+
+    .bg-cohere-primary:hover,
+    .bg-indigo-600:hover,
+    .hover\:bg-cohere-black:hover {
+        background-color: #00e5c9 !important;
+        color: #08080a !important;
+    }
+
+    /* Form Fields */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+        background-color: #16161f !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #00f5d4 !important;
+        --tw-ring-color: #00f5d4 !important;
+        outline: none !important;
+    }
+
+    /* Interactive matching cards & items */
+    .bg-indigo-50 {
+        background-color: rgba(0, 245, 212, 0.08) !important;
+        border-color: #00f5d4 !important;
+        color: #ffffff !important;
+    }
+
+    /* Dropdowns & Modals */
+    .bg-white.shadow-lg,
+    .bg-white.rounded-md {
+        background-color: #181822 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .bg-white.shadow-lg a,
+    .bg-white.rounded-md a {
+        color: #ffffff !important;
+    }
+
+    .bg-white.shadow-lg a:hover,
+    .bg-white.rounded-md a:hover {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+}

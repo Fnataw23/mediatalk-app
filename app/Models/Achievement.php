@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
+
+#[Fillable(['title', 'description', 'code'])]
+class Achievement extends Model
+{
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_achievements')
+                    ->withTimestamps();
+    }
+}
