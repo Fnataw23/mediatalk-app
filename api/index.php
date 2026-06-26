@@ -13,6 +13,9 @@ putenv('APP_SERVICES_CACHE=/tmp/services.php');
 putenv('VIEW_COMPILED_PATH=/tmp');
 putenv('LOG_CHANNEL=stderr');
 putenv('APP_DEBUG=true');
+putenv('SESSION_DRIVER=cookie');
+putenv('CACHE_STORE=array');
+putenv('CACHE_DRIVER=array');
 
 $_ENV['APP_CONFIG_CACHE'] = '/tmp/config.php';
 $_ENV['APP_EVENTS_CACHE'] = '/tmp/events.php';
@@ -22,6 +25,9 @@ $_ENV['APP_SERVICES_CACHE'] = '/tmp/services.php';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp';
 $_ENV['LOG_CHANNEL'] = 'stderr';
 $_ENV['APP_DEBUG'] = 'true';
+$_ENV['SESSION_DRIVER'] = 'cookie';
+$_ENV['CACHE_STORE'] = 'array';
+$_ENV['CACHE_DRIVER'] = 'array';
 
 define('LARAVEL_START', microtime(true));
 
