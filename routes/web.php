@@ -52,10 +52,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
 });
 
-// 7. Temporary route to run migrations on serverless deployment (Vercel)
 Route::get('/deploy-migrate-seed', function () {
     try {
-        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+        \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        $tables = \Illuminate\Support\Facades\DB::select('SHOW TABLES');
+        foreach ($tables as $table) {
+            $tableArray = (array) $table;
+            $tableName = reset($tableArray);
+            \Illuminate\Support\Facades\DB::statement("DROP TABLE IF EXISTS `{$tableName}`");
+        }
+        \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+        \Illuminate\Support\Facades\Artisan::call('migrate', [
             '--force' => true,
             '--seed' => true
         ]);
