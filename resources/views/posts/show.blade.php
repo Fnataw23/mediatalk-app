@@ -63,6 +63,30 @@
                                 src="{{ $driveUrl }}" 
                                 allow="autoplay" 
                                 allowfullscreen></iframe>
+                    @elseif($post->media_type === 'vk' || str_contains($post->media_url, 'vk.com') || str_contains($post->media_url, 'vkvideo.ru'))
+                        @php
+                            $vkUrl = $post->media_url;
+                            $vkUrl = str_replace('http://', 'https://', $vkUrl);
+                        @endphp
+                        <iframe class="w-full h-full absolute inset-0 border-0" 
+                                src="{{ $vkUrl }}" 
+                                allow="autoplay; encrypted-media; fullscreen; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    @elseif($post->media_type === 'rutube' || str_contains($post->media_url, 'rutube.ru'))
+                        @php
+                            $rutubeUrl = $post->media_url;
+                            if (str_contains($rutubeUrl, '/video/')) {
+                                preg_match('/\/video\/([a-zA-Z0-9_-]+)/', $rutubeUrl, $matches);
+                                if (!empty($matches[1])) {
+                                    $rutubeUrl = "https://rutube.ru/play/embed/" . $matches[1];
+                                }
+                            }
+                            $rutubeUrl = str_replace('http://', 'https://', $rutubeUrl);
+                        @endphp
+                        <iframe class="w-full h-full absolute inset-0 border-0" 
+                                src="{{ $rutubeUrl }}" 
+                                allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture" 
+                                allowfullscreen></iframe>
                     @elseif($post->media_type === 'video' || str_contains($post->media_url, '.mp4') || str_contains($post->media_url, '.webm') || str_contains($post->media_url, 'dropbox.com'))
                         @php
                             // Support Dropbox direct stream urls

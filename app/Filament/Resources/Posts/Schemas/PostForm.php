@@ -32,6 +32,8 @@ class PostForm
                         'youtube' => 'YouTube Video Embed',
                         'vimeo' => 'Vimeo Video Embed',
                         'video' => 'HTML5 / Direct Video (MP4/WebM)',
+                        'vk' => 'VK Video Embed',
+                        'rutube' => 'Rutube Video Embed',
                         'image' => 'Local / External Image',
                     ])
                     ->required(),

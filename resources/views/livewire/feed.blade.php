@@ -72,7 +72,7 @@
                 <a href="{{ route('posts.show', $post->slug) }}" class="group bg-white border border-cohere-card-border hover:border-cohere-slate/40 transition-all rounded-cohere-sm overflow-hidden flex flex-col justify-between h-[450px]">
                     <div class="space-y-4">
                         <div class="relative w-full h-48 bg-cohere-stone overflow-hidden border-b border-cohere-card-border">
-                            @if($post->media_type === 'youtube' || $post->media_type === 'vimeo' || $post->media_type === 'video' || str_contains($post->media_url, '.mp4') || str_contains($post->media_url, '.webm'))
+                            @if(in_array($post->media_type, ['youtube', 'vimeo', 'video', 'vk', 'rutube']) || str_contains($post->media_url, '.mp4') || str_contains($post->media_url, '.webm') || str_contains($post->media_url, 'vk.com') || str_contains($post->media_url, 'vkvideo.ru') || str_contains($post->media_url, 'rutube.ru'))
                                 <!-- Video Placeholder Cover -->
                                 <div class="absolute inset-0 bg-cohere-deep-green flex items-center justify-center text-white text-4xl group-hover:scale-105 transition duration-500">
                                     🎥

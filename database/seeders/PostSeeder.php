@@ -272,8 +272,8 @@ class PostSeeder extends Seeder
                 'category_id' => $movieCat->id,
                 'title' => 'Sintel: A Quest for Friendship',
                 'description' => "Follow Sintel as she rescues a baby dragon and starts an epic, emotional journey to find him when he is taken. In this segment, we will study the vocabulary of quests, hope, and attachment.",
-                'media_type' => 'video',
-                'media_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+                'media_type' => 'vk',
+                'media_url' => 'https://vk.com/video_ext.php?oid=-42617789&id=163820252&hash=6d2155b5dd63650f89',
                 'level' => 'B1',
             ]
         );
@@ -329,8 +329,8 @@ class PostSeeder extends Seeder
                 'category_id' => $movieCat->id,
                 'title' => 'Tears of Steel: A Sci-Fi Confrontation',
                 'description' => "Explore the advanced sci-fi vocabulary and intense conversational dynamics in the Blender Foundation's short film 'Tears of Steel'. We will analyze the grammar of regret, technology, and futuristic military operations.",
-                'media_type' => 'video',
-                'media_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+                'media_type' => 'vk',
+                'media_url' => 'https://vk.com/video_ext.php?oid=-150654156&id=456239106&hash=6d2155b5dd63650f89',
                 'level' => 'B2',
             ]
         );
