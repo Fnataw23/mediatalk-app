@@ -17,6 +17,7 @@ putenv('APP_DEBUG=true');
 putenv('SESSION_DRIVER=cookie');
 putenv('CACHE_STORE=array');
 putenv('CACHE_DRIVER=array');
+putenv('DB_HOST=91.208.207.108');
 
 $_ENV['APP_CONFIG_CACHE'] = '/tmp/config.php';
 $_ENV['APP_EVENTS_CACHE'] = '/tmp/events.php';
@@ -29,6 +30,7 @@ $_ENV['APP_DEBUG'] = 'true';
 $_ENV['SESSION_DRIVER'] = 'cookie';
 $_ENV['CACHE_STORE'] = 'array';
 $_ENV['CACHE_DRIVER'] = 'array';
+$_ENV['DB_HOST'] = '91.208.207.108';
 
 $_SERVER['APP_CONFIG_CACHE'] = '/tmp/config.php';
 $_SERVER['APP_EVENTS_CACHE'] = '/tmp/events.php';
@@ -41,6 +43,7 @@ $_SERVER['APP_DEBUG'] = 'true';
 $_SERVER['SESSION_DRIVER'] = 'cookie';
 $_SERVER['CACHE_STORE'] = 'array';
 $_SERVER['CACHE_DRIVER'] = 'array';
+$_SERVER['DB_HOST'] = '91.208.207.108';
 
 define('LARAVEL_START', microtime(true));
 
