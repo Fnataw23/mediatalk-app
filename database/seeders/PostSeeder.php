@@ -264,5 +264,119 @@ class PostSeeder extends Seeder
             ['question_text' => 'The meme uses a [deliberate] misspelling to indicate a sarcastic investment.']
         );
         TaskAnswer::updateOrCreate(['task_id' => $t4_2->id, 'answer' => 'deliberate', 'is_correct' => true]);
+
+        // --- POST 5: Sintel - A Quest for Friendship ---
+        $post5 = Post::updateOrCreate(
+            ['slug' => 'sintel-quest-for-friendship'],
+            [
+                'category_id' => $movieCat->id,
+                'title' => 'Sintel: A Quest for Friendship',
+                'description' => "Follow Sintel as she rescues a baby dragon and starts an epic, emotional journey to find him when he is taken. In this segment, we will study the vocabulary of quests, hope, and attachment.",
+                'media_type' => 'video',
+                'media_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+                'level' => 'B1',
+            ]
+        );
+
+        Vocabulary::updateOrCreate(
+            ['post_id' => $post5->id, 'word' => 'quest'],
+            [
+                'transcription' => '/kwest/',
+                'translation' => 'поиски / квест',
+                'explanation' => 'A long or arduous search for something.',
+                'example' => 'Sintel sets out on a perilous quest to find her lost companion, Scales.',
+            ]
+        );
+
+        Vocabulary::updateOrCreate(
+            ['post_id' => $post5->id, 'word' => 'attachment'],
+            [
+                'transcription' => '/əˈtætʃ.mənt/',
+                'translation' => 'привязанность',
+                'explanation' => 'An extra feeling of affection or fondness for a person, animal, or object.',
+                'example' => 'Sintel developed a deep emotional attachment to the baby dragon.',
+            ]
+        );
+
+        Question::updateOrCreate(['post_id' => $post5->id, 'text' => 'Why do you think Sintel was willing to risk her life to find Scales?']);
+        Question::updateOrCreate(['post_id' => $post5->id, 'text' => 'How does the theme of attachment affect our decisions in real life?']);
+
+        $t5_1 = Task::updateOrCreate(
+            ['post_id' => $post5->id, 'type' => 'multiple_choice'],
+            ['question_text' => 'What is the name of Sintel\'s companion dragon?']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t5_1->id, 'answer' => 'Scales', 'is_correct' => true]);
+        TaskAnswer::updateOrCreate(['task_id' => $t5_1->id, 'answer' => 'Sintel', 'is_correct' => false]);
+        TaskAnswer::updateOrCreate(['task_id' => $t5_1->id, 'answer' => 'Morpheus', 'is_correct' => false]);
+
+        $t5_2 = Task::updateOrCreate(
+            ['post_id' => $post5->id, 'type' => 'fill_gap'],
+            ['question_text' => 'A long and difficult search for something is called a [quest].']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t5_2->id, 'answer' => 'quest', 'is_correct' => true]);
+
+        $t5_3 = Task::updateOrCreate(
+            ['post_id' => $post5->id, 'type' => 'match_words'],
+            ['question_text' => 'Match these vocabulary words to their Russian translations.']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t5_3->id, 'answer' => 'quest', 'matching_translation' => 'поиски', 'is_correct' => true]);
+        TaskAnswer::updateOrCreate(['task_id' => $t5_3->id, 'answer' => 'attachment', 'matching_translation' => 'привязанность', 'is_correct' => true]);
+
+        // --- POST 6: Tears of Steel - Sci-Fi Dialogue ---
+        $post6 = Post::updateOrCreate(
+            ['slug' => 'tears-of-steel-sci-fi-confrontation'],
+            [
+                'category_id' => $movieCat->id,
+                'title' => 'Tears of Steel: A Sci-Fi Confrontation',
+                'description' => "Explore the advanced sci-fi vocabulary and intense conversational dynamics in the Blender Foundation's short film 'Tears of Steel'. We will analyze the grammar of regret, technology, and futuristic military operations.",
+                'media_type' => 'video',
+                'media_url' => 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+                'level' => 'B2',
+            ]
+        );
+
+        Vocabulary::updateOrCreate(
+            ['post_id' => $post6->id, 'word' => 'salvage'],
+            [
+                'transcription' => '/ˈsæl.vɪdʒ/',
+                'translation' => 'спасти / уберечь',
+                'explanation' => 'To rescue or save from loss, destruction, or ruin.',
+                'example' => 'Celia: "We\'re here to salvage the situation, not to destroy it."',
+            ]
+        );
+
+        Vocabulary::updateOrCreate(
+            ['post_id' => $post6->id, 'word' => 'confrontation'],
+            [
+                'transcription' => '/ˌkɒn.frʌn.ˈteɪ.ʃən/',
+                'translation' => 'противостояние / конфронтация',
+                'explanation' => 'A hostile or argumentative meeting or situation between opposing parties.',
+                'example' => 'The tense confrontation between the human soldiers and the giant robot escalates quickly.',
+            ]
+        );
+
+        Question::updateOrCreate(['post_id' => $post6->id, 'text' => 'How does the setting of a futuristic laboratory influence the tone of the conversation?']);
+        Question::updateOrCreate(['post_id' => $post6->id, 'text' => 'What do you think is the main conflict between the two main characters in this scene?']);
+
+        $t6_1 = Task::updateOrCreate(
+            ['post_id' => $post6->id, 'type' => 'multiple_choice'],
+            ['question_text' => 'What does the word "salvage" mean in a conversation?']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t6_1->id, 'answer' => 'To rescue something from ruin', 'is_correct' => true]);
+        TaskAnswer::updateOrCreate(['task_id' => $t6_1->id, 'answer' => 'To destroy completely', 'is_correct' => false]);
+        TaskAnswer::updateOrCreate(['task_id' => $t6_1->id, 'answer' => 'To ignore a problem', 'is_correct' => false]);
+
+        $t6_2 = Task::updateOrCreate(
+            ['post_id' => $post6->id, 'type' => 'fill_gap'],
+            ['question_text' => 'We need to [salvage] what is left of our relationship before it\'s too late.']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t6_2->id, 'answer' => 'salvage', 'is_correct' => true]);
+
+        $t6_3 = Task::updateOrCreate(
+            ['post_id' => $post6->id, 'type' => 'match_words'],
+            ['question_text' => 'Match these sci-fi vocabulary words to their Russian translations.']
+        );
+        TaskAnswer::updateOrCreate(['task_id' => $t6_3->id, 'answer' => 'salvage', 'matching_translation' => 'спасти', 'is_correct' => true]);
+        TaskAnswer::updateOrCreate(['task_id' => $t6_3->id, 'answer' => 'confrontation', 'matching_translation' => 'противостояние', 'is_correct' => true]);
     }
 }

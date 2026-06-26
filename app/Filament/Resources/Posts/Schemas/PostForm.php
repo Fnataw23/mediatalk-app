@@ -31,6 +31,7 @@ class PostForm
                     ->options([
                         'youtube' => 'YouTube Video Embed',
                         'vimeo' => 'Vimeo Video Embed',
+                        'video' => 'HTML5 / Direct Video (MP4/WebM)',
                         'image' => 'Local / External Image',
                     ])
                     ->required(),
