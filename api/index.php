@@ -29,6 +29,18 @@ $_ENV['SESSION_DRIVER'] = 'cookie';
 $_ENV['CACHE_STORE'] = 'array';
 $_ENV['CACHE_DRIVER'] = 'array';
 
+$_SERVER['APP_CONFIG_CACHE'] = '/tmp/config.php';
+$_SERVER['APP_EVENTS_CACHE'] = '/tmp/events.php';
+$_SERVER['APP_PACKAGES_CACHE'] = '/tmp/packages.php';
+$_SERVER['APP_ROUTES_CACHE'] = '/tmp/routes.php';
+$_SERVER['APP_SERVICES_CACHE'] = '/tmp/services.php';
+$_SERVER['VIEW_COMPILED_PATH'] = '/tmp';
+$_SERVER['LOG_CHANNEL'] = 'stderr';
+$_SERVER['APP_DEBUG'] = 'true';
+$_SERVER['SESSION_DRIVER'] = 'cookie';
+$_SERVER['CACHE_STORE'] = 'array';
+$_SERVER['CACHE_DRIVER'] = 'array';
+
 define('LARAVEL_START', microtime(true));
 
 try {
