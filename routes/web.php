@@ -63,10 +63,13 @@ Route::get('/deploy-migrate-seed', function () {
         }
         \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
-        \Illuminate\Support\Facades\Artisan::call('migrate', [
+        $exitCode = \Illuminate\Support\Facades\Artisan::call('migrate', [
             '--force' => true,
             '--seed' => true
         ]);
+        if ($exitCode !== 0) {
+            return "Migration failed! Output: <pre>" . \Illuminate\Support\Facades\Artisan::output() . "</pre>";
+        }
         return "Database migrated and seeded successfully!";
     } catch (\Exception $e) {
         return "Error: " . $e->getMessage();
